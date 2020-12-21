@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --mode development ./twitter/frontend/src/index.js --output-path ./twitter/frontend/static/frontend/",
+    "build": "webpack --mode production ./twitter/frontend/src/index.js --output-path ./twitter/frontend/static/frontend/"
   },
   "keywords": [],
   "author": "",
