@@ -1,0 +1,35 @@
+.sidebar__twitterIcon {
+    color: var(--twitter-color);
+    font-size: 30px !important;
+    margin-top: 10px; 
+    margin-left: -4px;
+    margin-bottom: 10px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    /* flex: 0.3; */
+    padding-left: 10px;
+    width: 23%;
+    border-right: 1px solid var(--twitter-background);
+    /* margin-right: 30px; */
+    margin-left: 20px;
+    height: 100vh;
+    font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    
+}
+
+.sidebar__button {
+    font-size: 14px !important;
+    margin-top: 10px !important;
+    text-transform: inherit !important;
+    background-color: var(--twitter-color) !important;
+    border-radius: 50px !important;
+    color: #fff !important;
+    width: 185px;
+    height: 45px;
+    font-weight: 800 !important;
+    font-size: 17px !important;
+}
