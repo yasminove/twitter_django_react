@@ -40,8 +40,19 @@ INSTALLED_APPS = [
     'corsheaders',
     'tweets', 
     'rest_framework',
-    'frontend'
+    'frontend',
+    'knox', 
+    'accounts'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',)
+}
+
+
+
+
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
