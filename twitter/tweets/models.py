@@ -10,4 +10,5 @@ class Tweet(models.Model):
     displayName = models.CharField(max_length=50, default='Twitter User')
     username = models.CharField(max_length=50, default='username')
     tweeted_at = models.DateTimeField(default=timezone.now)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name="tweets")
     # author = models.ForeignKey(User, on_delete=models.CASCADE)
