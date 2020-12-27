@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Component } from 'react';
+
 import './TweetBox.css';
 
 import { connect } from 'react-redux';
@@ -7,9 +8,10 @@ import { addPost } from '../../actions/posts';
 
 import Image from '../../images/yasmin.jpeg';
 import { Avatar, Button } from '@material-ui/core';
+
 // import db from '../firbase'
-let docId = '';
-import axios from 'axios';
+// let docId = '';
+// import axios from 'axios';
 
 class TweetBox extends Component {
   // const [tweet, setTweet] = useState('');
@@ -71,7 +73,6 @@ class TweetBox extends Component {
             </Button>
           ) : (
             <Button
-              disabled
               type='submit'
               className='tweetBox_btn__disabled'
               variant='contained'
@@ -134,4 +135,4 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, { addPost })(TweetBox);
-export { docId };
+// export { docId };
