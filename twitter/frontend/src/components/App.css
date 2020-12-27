@@ -1,13 +1,5 @@
 body {
-    --twitter-color: #1da1f2;
-    --twitter-background: #ebeef0;
-    display: flex;
-  }
-  
-.app {
-    display: flex;
-    width: 1422px;
-    height: 100vh;
-    padding: 0;
-    margin: 0;
+  --twitter-color: #1da1f2;
+  --twitter-background: #ebeef0;
+  display: flex;
 }
