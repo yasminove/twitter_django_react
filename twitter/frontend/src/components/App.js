@@ -11,12 +11,18 @@ import './App.css';
 
 import Header from './layout/Header';
 import MainPage from './MainPage/MainPage';
+import Register from './accounts/Register';
+import Login from './accounts/Login';
+
+import PrivateRoute from './common/PrivateRoute';
 
 import { Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
 
 import store from '../store';
 import { Provider } from 'react-redux';
+
+import {loadUser}from '../actions/auth'
 
 import Alerts from './layout/Alerts';
 
@@ -26,6 +32,9 @@ const alertOptions = {
 };
 
 class App extends Component {
+  componentDidMount(){
+    store.dispatch(loadUser())
+  }
   render() {
     return (
       <Provider store={store}>
@@ -36,7 +45,9 @@ class App extends Component {
               <Alerts />
               {/* <MainPage /> */}
               <Switch>
-                <Route exact path='/' component={MainPage} />
+                <PrivateRoute exact path='/' component={MainPage} />
+                <Route exact path='/login' component={Login} />
+                <Route exact path='/register' component={Register} />
               </Switch>
             </Fragment>
           </Router>
