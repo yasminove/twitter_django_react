@@ -2,11 +2,13 @@ import axios from 'axios';
 
 import { GET_POSTS, ADD_POST, GET_MESSAGE, CREATE_MESSAGE } from './types';
 
+import { tokenConfig } from './auth'
+
 import { createMessage, returnError } from './messages';
 
-export const getPosts = () => (dispatch) => {
+export const getPosts = () => (dispatch, getState) => {
   axios
-    .get('/api/tweets/')
+    .get('/api/tweets/', tokenConfig(getState))
     .then((res) =>
       dispatch({
         type: GET_POSTS,
@@ -19,9 +21,9 @@ export const getPosts = () => (dispatch) => {
     });
 };
 
-export const addPost = (post) => (dispatch) => {
+export const addPost = (post) => (dispatch, getState) => {
   axios
-    .post('/api/tweets/', post)
+    .post('/api/tweets/', post, tokenConfig(getState))
     .then((res) => {
       dispatch(createMessage({ postAdded: 'post Added' }));
       dispatch({
